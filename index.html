@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shailendra Digital Solutions | Website Design & Digital Services</title>
+
+<meta name="description" content="Professional website design, responsive web development, SEO, digital marketing and business website services. Contact now for modern websites.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+:root{
+    --bg:#050816;
+    --card:#0b1023;
+    --blue:#00d4ff;
+    --purple:#7c3aed;
+    --white:#ffffff;
+    --text:#cbd5e1;
+    --muted:#94a3b8;
+    --green:#25D366;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(5,8,22,0.78);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:900;
+    color:var(--blue);
+}
+
+.logo span{
+    color:white;
+}
+
+.nav a{
+    margin-left:25px;
+    color:#e5e7eb;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.nav a:hover{
+    color:var(--blue);
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.hero{
+    min-height:100vh;
+    padding:150px 8% 80px;
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    align-items:center;
+    gap:55px;
+    background:
+    radial-gradient(circle at top right,rgba(0,212,255,0.26),transparent 35%),
+    radial-gradient(circle at bottom left,rgba(124,58,237,0.28),transparent 35%);
+}
+
+.badge{
+    display:inline-block;
+    padding:9px 18px;
+    border-radius:30px;
+    background:rgba(0,212,255,0.12);
+    color:var(--blue);
+    border:1px solid rgba(0,212,255,0.35);
+    margin-bottom:20px;
+    font-size:14px;
+}
+
+.hero h1{
+    font-size:58px;
+    line-height:1.12;
+    margin-bottom:22px;
+}
+
+.hero h1 span{
+    color:var(--blue);
+}
+
+.hero p{
+    color:var(--text);
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:32px;
+}
+
+.btn-group{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 25px;
+    border-radius:40px;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:white;
+    font-weight:700;
+    box-shadow:0 15px 40px rgba(0,212,255,0.25);
+    transition:0.3s;
+    display:inline-block;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+.btn-outline{
+    background:transparent;
+    border:1px solid rgba(0,212,255,0.6);
+}
+
+.btn-whatsapp{
+    background:linear-gradient(135deg,#25D366,#128C7E);
+}
+
+.hero-stats{
+    display:flex;
+    gap:18px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.stat{
+    padding:18px 22px;
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:20px;
+}
+
+.stat h3{
+    color:var(--blue);
+    font-size:25px;
+}
+
+.stat p{
+    margin:0;
+    font-size:13px;
+    color:var(--muted);
+}
+
+.scene{
+    perspective:1200px;
+}
+
+.hero-card{
+    min-height:460px;
+    border-radius:32px;
+    padding:26px;
+    background:linear-gradient(145deg,rgba(255,255,255,0.14),rgba(255,255,255,0.04));
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 35px 90px rgba(0,0,0,0.5);
+    transform:rotateY(-14deg) rotateX(8deg);
+    transition:0.5s;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-card:hover{
+    transform:rotateY(0deg) rotateX(0deg) translateY(-10px);
+}
+
+.browser{
+    background:#0f172a;
+    border-radius:22px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.13);
+}
+
+.browser-top{
+    height:42px;
+    background:#111827;
+    display:flex;
+    gap:8px;
+    align-items:center;
+    padding:0 15px;
+}
+
+.dot{
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    background:var(--blue);
+}
+
+.browser-body{
+    padding:28px;
+}
+
+.mock-hero{
+    height:110px;
+    border-radius:18px;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    margin-bottom:18px;
+}
+
+.mock-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.mock-box{
+    height:80px;
+    border-radius:16px;
+    background:rgba(255,255,255,0.1);
+}
+
+.float-card{
+    position:absolute;
+    bottom:26px;
+    right:26px;
+    padding:20px;
+    border-radius:20px;
+    background:#020617;
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 20px 45px rgba(0,0,0,0.45);
+}
+
+section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.section-title p{
+    color:var(--muted);
+}
+
+.services,
+.packages,
+.projects,
+.testimonials{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+}
+
+.card{
+    padding:32px;
+    border-radius:28px;
+    background:linear-gradient(145deg,rgba(255,255,255,0.11),rgba(255,255,255,0.035));
+    border:1px solid rgba(255,255,255,0.12);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 25px 60px rgba(0,212,255,0.18);
+}
+
+.icon{
+    width:58px;
+    height:58px;
+    border-radius:18px;
+    background:rgba(0,212,255,0.13);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:var(--text);
+    line-height:1.7;
+    font-size:15px;
+}
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-box{
+    padding:40px;
+    border-radius:30px;
+    background:linear-gradient(145deg,rgba(0,212,255,0.14),rgba(124,58,237,0.14));
+    border:1px solid rgba(255,255,255,0.13);
+}
+
+.about h2{
+    font-size:40px;
+    margin-bottom:18px;
+}
+
+.about p{
+    color:var(--text);
+    line-height:1.8;
+    margin-bottom:16px;
+}
+
+.check{
+    margin-top:18px;
+}
+
+.check li{
+    list-style:none;
+    margin-bottom:12px;
+    color:#e5e7eb;
+}
+
+.check li::before{
+    content:"✔";
+    color:var(--blue);
+    margin-right:10px;
+}
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+}
+
+.step{
+    padding:28px;
+    border-radius:25px;
+    background:#0b1023;
+    border:1px solid rgba(255,255,255,0.1);
+    position:relative;
+}
+
+.step-number{
+    font-size:34px;
+    color:var(--blue);
+    font-weight:900;
+    margin-bottom:10px;
+}
+
+.package-card{
+    position:relative;
+}
+
+.package-card.featured{
+    border:1px solid var(--blue);
+    transform:scale(1.03);
+}
+
+.tag{
+    position:absolute;
+    top:18px;
+    right:18px;
+    background:var(--blue);
+    color:#020617;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:800;
+}
+
+.price{
+    font-size:34px;
+    font-weight:900;
+    color:var(--blue);
+    margin:18px 0;
+}
+
+.package-card ul{
+    margin:20px 0;
+}
+
+.package-card li{
+    list-style:none;
+    color:var(--text);
+    margin-bottom:12px;
+}
+
+.package-card li::before{
+    content:"✓";
+    color:var(--blue);
+    margin-right:10px;
+}
+
+.project-img{
+    height:190px;
+    border-radius:20px;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.testimonial p{
+    font-style:italic;
+}
+
+.client{
+    margin-top:20px;
+    color:var(--blue);
+    font-weight:700;
+}
+
+.faq{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-item{
+    margin-bottom:18px;
+    background:#0b1023;
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:18px;
+    overflow:hidden;
+}
+
+.faq-question{
+    padding:20px;
+    cursor:pointer;
+    font-weight:700;
+    display:flex;
+    justify-content:space-between;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:0.35s;
+    color:var(--text);
+    padding:0 20px;
+    line-height:1.7;
+}
+
+.faq-item.active .faq-answer{
+    max-height:160px;
+    padding:0 20px 20px;
+}
+
+.contact{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+    align-items:start;
+}
+
+.contact-info,
+.contact-form{
+    padding:35px;
+    border-radius:30px;
+    background:linear-gradient(145deg,rgba(255,255,255,0.11),rgba(255,255,255,0.04));
+    border:1px solid rgba(255,255,255,0.12);
+}
+
+.contact-info h2,
+.contact-form h2{
+    font-size:32px;
+    margin-bottom:18px;
+}
+
+.contact-info p{
+    color:var(--text);
+    line-height:1.8;
+    margin-bottom:22px;
+}
+
+.info-line{
+    margin-bottom:15px;
+    color:#e5e7eb;
+}
+
+.info-line span{
+    color:var(--blue);
+    font-weight:700;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:none;
+    outline:none;
+    border-radius:14px;
+    background:#020617;
+    color:white;
+    border:1px solid rgba(255,255,255,0.12);
+}
+
+textarea{
+    height:120px;
+    resize:none;
+}
+
+.footer{
+    padding:35px 8%;
+    text-align:center;
+    color:var(--muted);
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.whatsapp-float{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:var(--green);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    z-index:999;
+    box-shadow:0 15px 35px rgba(37,211,102,0.45);
+}
+
+@media(max-width:1000px){
+    .hero,
+    .about,
+    .contact{
+        grid-template-columns:1fr;
+    }
+
+    .services,
+    .packages,
+    .projects,
+    .testimonials{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .process{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero-card{
+        transform:none;
+    }
+}
+
+@media(max-width:750px){
+    .nav{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:#050816;
+        display:none;
+        flex-direction:column;
+        padding:20px 8%;
+        border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav.active{
+        display:flex;
+    }
+
+    .nav a{
+        margin:12px 0;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero h1{
+        font-size:39px;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+    .services,
+    .packages,
+    .projects,
+    .testimonials,
+    .process{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding-top:130px;
+    }
+
+    section{
+        padding:70px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">Shailendra<span> Digital</span></div>
+
+    <nav class="nav" id="nav">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#projects">Work</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+</header>
+
+<section class="hero" id="home">
+    <div>
+        <div class="badge">Professional Website Design & Digital Services</div>
+
+        <h1>Grow Your Business With a <span>Modern Website</span></h1>
+
+        <p>
+            We design professional, responsive, SEO-friendly and conversion-focused websites
+            for local businesses, startups, PG owners, coaching institutes, restaurants,
+            shops and service providers.
+        </p>
+
+        <div class="btn-group">
+            <a href="https://wa.me/919109797538?text=Hello, I want a website for my business." target="_blank" class="btn btn-whatsapp">WhatsApp Now</a>
+            <a href="#services" class="btn btn-outline">View Services</a>
+            <a href="https://www.linkedin.com/in/shailendra-singh-bhadoriya-7a2354310" target="_blank" class="btn btn-outline">LinkedIn</a>
+        </div>
+
+         
+        <div class="hero-stats">
+            <div class="stat">
+                <h3>100%</h3>
+                <p>Responsive Design</p>
+            </div>
+            <div class="stat">
+                <h3>SEO</h3>
+                <p>Friendly Structure</p>
+            </div>
+            <div class="stat">
+                <h3>Fast</h3>
+                <p>Loading Website</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="hero-card">
+            <div class="browser">
+                <div class="browser-top">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+
+                <div class="browser-body">
+                    <div class="mock-hero"></div>
+                    <h3>Business Website Preview</h3>
+                    <p style="color:#94a3b8;margin:10px 0 18px;">Clean UI • Fast • Mobile Friendly</p>
+
+                    <div class="mock-grid">
+                        <div class="mock-box"></div>
+                        <div class="mock-box"></div>
+                        <div class="mock-box"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="float-card">
+                <h3>Website Ready</h3>
+                <p style="color:#94a3b8;">For Clients & Google</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="section-title">
+        <h2>Our Services</h2>
+        <p>Complete digital solution for your business growth</p>
+    </div>
+
+    <div class="services">
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Website Design</h3>
+            <p>Modern, clean and professional websites for businesses, coaching, PG, shops and personal brands.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📱</div>
+            <h3>Responsive Website</h3>
+            <p>Your website will work perfectly on mobile, tablet, laptop and desktop devices.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🚀</div>
+            <h3>SEO Friendly Setup</h3>
+            <p>Basic SEO structure, meta tags, fast loading and Google-friendly website layout.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🛒</div>
+            <h3>Business Website</h3>
+            <p>Lead generation website with services, gallery, contact form, WhatsApp and Google map.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎯</div>
+            <h3>Digital Marketing</h3>
+            <p>Social media promotion, Google business profile support and online visibility improvement.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🛠️</div>
+            <h3>Website Maintenance</h3>
+            <p>Content updates, bug fixing, speed improvement and regular website support.</p>
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="about-box">
+        <h2>Why Choose Us?</h2>
+        <p>
+            Shailendra Digital Solutions helps businesses build a strong online presence.
+            Our focus is simple: attractive design, smooth user experience and more customer enquiries.
+        </p>
+
+        <ul class="check">
+            <li>Modern UI/UX based website design</li>
+            <li>Mobile-first responsive layout</li>
+            <li>WhatsApp and contact form integration</li>
+            <li>SEO-ready website structure</li>
+            <li>Fast loading and clean code</li>
+        </ul>
+    </div>
+
+    <div class="about-box">
+        <h2>Who We Help?</h2>
+        <p>
+            We create websites for PG owners, restaurants, coaching institutes, startups,
+            medical stores, gyms, salons, local shops and service-based businesses.
+        </p>
+
+        <p>
+            A professional website builds trust and makes it easy for customers to contact you directly.
+        </p>
+
+        <a href="#contact" class="btn">Get Free Consultation</a>
+    </div>
+</section>
+
+<section>
+    <div class="section-title">
+        <h2>Our Working Process</h2>
+        <p>Simple and transparent process from idea to live website</p>
+    </div>
+
+    <div class="process">
+        <div class="step">
+            <div class="step-number">01</div>
+            <h3>Discussion</h3>
+            <p>We understand your business, services and website requirements.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">02</div>
+            <h3>Design</h3>
+            <p>We create a professional UI layout according to your business type.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">03</div>
+            <h3>Development</h3>
+            <p>We build a fast, responsive and user-friendly website.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">04</div>
+            <h3>Launch</h3>
+            <p>Your website goes live with contact, WhatsApp and SEO setup.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="section-title">
+        <h2>Website Packages</h2>
+        <p>Choose the best option according to your business need</p>
+    </div>
+
+    <div class="packages">
+        <div class="card package-card">
+            <h3>Starter Website</h3>
+            <div class="price">Basic</div>
+            <p>Best for simple online presence.</p>
+            <ul>
+                <li>1 Page Website</li>
+                <li>Mobile Responsive</li>
+                <li>WhatsApp Button</li>
+                <li>Basic SEO</li>
+            </ul>
+            <a href="#contact" class="btn">Enquire Now</a>
+        </div>
+
+        <div class="card package-card featured">
+            <div class="tag">Popular</div>
+            <h3>Business Website</h3>
+            <div class="price">Standard</div>
+            <p>Best for businesses and service providers.</p>
+            <ul>
+                <li>5 Pages Website</li>
+                <li>Contact Form</li>
+                <li>Google Map</li>
+                <li>SEO Friendly</li>
+                <li>Fast Loading</li>
+            </ul>
+            <a href="#contact" class="btn">Enquire Now</a>
+        </div>
+
+        <div class="card package-card">
+            <h3>Premium Website</h3>
+            <div class="price">Advanced</div>
+            <p>Best for growing brands and professional businesses.</p>
+            <ul>
+                <li>Custom UI/UX Design</li>
+                <li>Multiple Pages</li>
+                <li>Animations</li>
+                <li>SEO Setup</li>
+                <li>Maintenance Support</li>
+            </ul>
+            <a href="#contact" class="btn">Enquire Now</a>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="section-title">
+        <h2>Work We Can Build</h2>
+        <p>Website types available for different businesses</p>
+    </div>
+
+    <div class="projects">
+        <div class="card">
+            <div class="project-img">🏠</div>
+            <h3>PG / Hostel Website</h3>
+            <p>Room details, facilities, gallery, booking enquiry, map and WhatsApp contact.</p>
+        </div>
+
+        <div class="card">
+            <div class="project-img">🎓</div>
+            <h3>Coaching Website</h3>
+            <p>Courses, faculty, results, admission form and student-friendly layout.</p>
+        </div>
+
+        <div class="card">
+            <div class="project-img">🏢</div>
+            <h3>Business Website</h3>
+            <p>Service pages, testimonials, contact form and professional business branding.</p>
+        </div>
+
+         <div class="card">
+            <div class="project-img">🏢</div>
+            <h3>Others Website</h3>
+            <p>Service pages, testimonials, contact form and professional business branding.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="section-title">
+        <h2>Client Reviews</h2>
+        <p>What clients can expect from our service</p>
+    </div>
+
+    <div class="testimonials">
+        <div class="card testimonial">
+            <p>“Professional website design with clean layout and fast delivery.”</p>
+            <div class="client">Local Business Owner</div>
+        </div>
+
+        <div class="card testimonial">
+            <p>“Good communication and mobile-friendly website for my business.”</p>
+            <div class="client">Service Provider</div>
+        </div>
+
+        <div class="card testimonial">
+            <p>“Website helped customers contact us easily through WhatsApp.”</p>
+            <div class="client">PG Owner</div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+        <p>Common questions before starting a website</p>
+    </div>
+
+    <div class="faq">
+        <div class="faq-item">
+            <div class="faq-question">How much time does it take to build a website? <span>+</span></div>
+            <div class="faq-answer">A basic website can be completed quickly depending on content, pages and required features.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Will my website work on mobile? <span>+</span></div>
+            <div class="faq-answer">Yes, every website is fully responsive and works on mobile, tablet, laptop and desktop.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Can you add WhatsApp and contact form? <span>+</span></div>
+            <div class="faq-answer">Yes, WhatsApp button, contact form, email link, phone link and LinkedIn link can be added.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Will the website be Google friendly? <span>+</span></div>
+            <div class="faq-answer">Yes, basic SEO structure, title, meta description and clean code will be included.</div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Ready to build your business website? Send your enquiry now.</p>
+    </div>
+
+    <div class="contact">
+        <div class="contact-info">
+            <h2>Let’s Start Your Website</h2>
+            <p>
+                Contact us for website design, business website, SEO-friendly website,
+                digital marketing and website maintenance services.
+            </p>
+
+            <div class="info-line"><span>Name:</span> Shailendra Digital Solutions</div>
+            <div class="info-line"><span>Founder:</span> Shailendra Singh</div>
+            <div class="info-line"><span>Phone:</span> +91 9109797538</div>
+            <div class="info-line"><span>Email:</span> shivam2005singhram@gmail.com</div>
+            <!-- <div class="info-line"><span>LinkedIn:</span> linkedin.com/in/your-linkedin-url</div> -->
+            <div class="info-line"><span>LinkedIn:</span> https://www.linkedin.com/in/shailendra-singh-bhadoriya-7a2354310</div>
+
+            <div class="btn-group" style="margin-top:25px;">
+                <a href="tel:+919109797538" class="btn">Call Now</a>
+                <a href="https://wa.me/919109797538?text=Hello, I want a website for my business." target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>Send Enquiry</h2>
+
+            <form onsubmit="sendWhatsApp(); return false;">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="tel" id="phone" placeholder="Your Phone Number" required>
+                <input type="text" id="business" placeholder="Business Type">
+                <textarea id="message" placeholder="Tell us what type of website you need"></textarea>
+                <button type="submit" class="btn" style="border:none;cursor:pointer;width:100%;">Send on WhatsApp</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    © 2026 Shailendra Digital Solutions. All Rights Reserved.
+</footer>
+
+<a href="https://wa.me/919109797538?text=Hello, I want a website for my business." target="_blank" class="whatsapp-float">💬</a>
+
+<script>
+function toggleMenu(){
+    document.getElementById("nav").classList.toggle("active");
+}
+
+document.querySelectorAll(".faq-question").forEach(item=>{
+    item.addEventListener("click",()=>{
+        item.parentElement.classList.toggle("active");
+    });
+});
+
+function sendWhatsApp(){
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let business = document.getElementById("business").value;
+    let message = document.getElementById("message").value;
+
+    let whatsappNumber = "919109797538";
+
+    let text =
+    "Hello, I want a website for my business.%0A%0A" +
+    "Name: " + name + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "Business Type: " + business + "%0A" +
+    "Requirement: " + message;
+
+    window.open("https://wa.me/" + whatsappNumber + "?text=" + text, "_blank");
+}
+</script>
+
+</body>
+</html>
